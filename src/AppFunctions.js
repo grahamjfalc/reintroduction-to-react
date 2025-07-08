@@ -66,7 +66,7 @@ export async function getLongitude(address) {
 }
 
 export async function getWeatherByCoordinates(latitude, longitude) {
-  const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m&forecast_days=1`;
+  const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,wind_speed_10m,wind_direction_10m,relative_humidity_2m&forecast_days=1`;
 
   try {
     const response = await fetch(apiUrl);
@@ -74,6 +74,7 @@ export async function getWeatherByCoordinates(latitude, longitude) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
+    console.log(data)
 
     if (data.current && typeof data.current.temperature_2m !== 'undefined') {
       const temperature = data.current.temperature_2m;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getLatitude, getLongitude } from './AppFunctions.js';
+import { getLatitude, getLongitude, getWeatherByCoordinates } from './AppFunctions.js';
 
 function App() {
   const [inputValue, setInputValue] = useState('');
@@ -11,8 +11,10 @@ function App() {
   const handleSubmit = async () => {
     const longitude = await getLongitude("Falmouth,UK");
     const latitude = await getLatitude("Falmouth, UK");
-
+    const weather = await getWeatherByCoordinates(longitude, latitude)
+    console.log("Falmouth, UK")
     console.log("Longitude:", longitude, "Latitude:", latitude);
+    console.log("Weather:", weather);
   };
 
   const handleKeyDown = (event) => {
