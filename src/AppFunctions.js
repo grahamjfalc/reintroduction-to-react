@@ -1,4 +1,3 @@
-// src/geocode.js
 
 export async function geocodeAddress(address) {
   const nominatimApiUrl = 'https://nominatim.openstreetmap.org/search';
