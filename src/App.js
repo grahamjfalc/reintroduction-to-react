@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { geocodeAddress } from './AppFunctions.js';
+import { getLatitude, getLongitude } from './AppFunctions.js';
 
 function App() {
   const [inputValue, setInputValue] = useState('');
@@ -8,8 +8,11 @@ function App() {
     setInputValue(event.target.value);
   };
 
-  const handleSubmit = () => {
-    console.log(geocodeAddress("Falmouth, UK"));
+  const handleSubmit = async () => {
+    const longitude = await getLongitude("Falmouth,UK");
+    const latitude = await getLatitude("Falmouth, UK");
+
+    console.log("Longitude:", longitude, "Latitude:", latitude);
   };
 
   const handleKeyDown = (event) => {
