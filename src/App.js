@@ -1,6 +1,6 @@
 // import React, { useState } from 'react';
 // import { getLatitude, getLongitude, getWeatherByCoordinates } from './AppFunctions.js';
-import { Header } from './Header.js';
+import { Header } from './components/Header.js';
 
 function App() {
   // const [inputValue, setInputValue] = useState('');
