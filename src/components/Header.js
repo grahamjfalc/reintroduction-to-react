@@ -1,7 +1,14 @@
-export const Header = (text) => {
+// src/Header.js
+import React from 'react';
+
+// This is a functional React component
+function Header(props) {
+  // Access the title via props.title
   return (
-    <div className="p-10 text-2xl">
-      <span className="inline-block bg-blue-200 px-40 py-10 rounded">{text}</span>
-    </div>
+    <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
+      {props.title}
+    </h2>
   );
 }
+
+export default Header; // Export the component so it can be imported

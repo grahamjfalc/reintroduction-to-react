@@ -1,6 +1,6 @@
 // import React, { useState } from 'react';
 // import { getLatitude, getLongitude, getWeatherByCoordinates } from './AppFunctions.js';
-import { Header } from './components/Header.js';
+import Header from './components/Header.js';
 
 function App() {
   // const [inputValue, setInputValue] = useState('');
@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div className="min-h-screen text-center bg-gradient-to-br from-purple-500 to-indigo-600 p-4">
-      {Header("Graham's Weather App")}
+      <Header title="Graham's Weather App" />
     </div>
   );
 }
